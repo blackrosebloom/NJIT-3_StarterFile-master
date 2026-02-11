@@ -16,9 +16,7 @@
 	<!-- Javascript Framework (e.g., vue.js) (ADD HERE) -->
 	 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-<body>
-	<div id="vue_app" class="container"></div>
-</body>
+
 
 
 </head>
@@ -29,7 +27,7 @@
 	    <div class="header">
 
 	      <div class="container">
-	        <h1 id="app_title"> My favorite top 8 movies</h1>
+	        <h1 id="app_title"> movie/tv show list</h1>
 	      </div>
 
 	    </div>
@@ -38,11 +36,11 @@
 
 	      <div class="row">
 
-	        <div class="col-md-6">
+	        <div class="col-md-6" v-for="(movie,index) in movies">
 	            <div class="thumbnail">
 
-						<img :src="movie.poster[movie.posterindex]" @click="posterClick(index)"class="poster img-fluid" />
-						<div class="imageInfo">{{movie.posterindex +1 }} of {{movie.poster.length}}</div>
+						<img :src="movie.posters[movie.posterindex]" @click="posterClick(index)"class="poster img-fluid" />
+						<div class="imageInfo">{{movie.posterindex +1 }} of {{movie.posters.length}}</div>
 
 						<p class="title">{{movie.title}} ({{movie.country}})</p>
 						<p class="score"><i class="bi bi-star" aria-hidden="true"></i> {{movie.iscore}} </p>
